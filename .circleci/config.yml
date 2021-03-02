@@ -34,61 +34,12 @@ jobs:
         default: cimg
     executor: <<parameters.runner>>
     steps:
-      - slack/notify:
-          event: always
-          custom: |
-            {
-              "blocks": [
-                {
-                  "type": "section",
-                  "text": {
-                    "type": "mrkdwn",
-                    "text": "Current Job: $CIRCLE_JOB"
-                  }
-                },
-                {
-                  "type": "section",
-                  "text": {
-                    "type": "mrkdwn",
-                    "text": "This test will @ a normal user, a user ID, and normal group name: <@U8C9ETTUG>, @orbs, @gabriel"
-                  }
-                }
-              ]
-              }
       - run:
           name: Verify SLACK_JOB_STATUS is written
           command: |
             grep "pass" /tmp/SLACK_JOB_STATUS
-      - slack/notify:
-          template: basic_fail_1
-          mentions: "@orbs"
-          event: always
-      - slack/notify:
-          template: basic_success_1
-          event: always
-      - slack/notify:
-          template: success_tagged_deploy_1
-          event: always
-      - slack/notify:
-          template: basic_on_hold_1
-          event: always
-      - slack/notify:
-          event: pass
-          custom: >
-            {
-              "blocks": [
-                {
-                  "type": "section",
-                  "text": {
-                    "type": "mrkdwn",
-                    "text": "Sample link using environment variable in markdown <${CIRCLE_BUILD_URL}|LINK >"
-                  }
-                }
-              ]
-            }
 
 workflows:
-
   test-pack:
     unless: << pipeline.parameters.run-integration-tests >>
     jobs:
@@ -134,7 +85,6 @@ workflows:
       - integration-test-templates
       - orb-tools/dev-promote-prod-from-commit-subject:
           orb-name: usertech/circleci-slack-orb
-          context: orb-publishing
           add-pr-comment: false
           fail-if-semver-not-indicated: true
           publish-version-tag: false
