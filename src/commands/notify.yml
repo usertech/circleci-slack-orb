@@ -58,7 +58,7 @@ parameters:
       Disable to catch initial setup errors. Re-enable to prevent Slack errors from affecting your pipeline.
     type: boolean
     default: true
-      
+
 steps:
   - run:
       when: on_fail
