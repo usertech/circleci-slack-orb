@@ -40,7 +40,7 @@ jobs:
         default: cimg
     executor: <<parameters.runner>>
     steps:
-      - slack/notify:
+      - circleci-slack-orb/notify:
           event: always
           custom: |
             {
@@ -60,25 +60,25 @@ jobs:
                   }
                 }
               ]
-              }
+            }
       - run:
           name: Verify SLACK_JOB_STATUS is written
           command: |
             grep "pass" /tmp/SLACK_JOB_STATUS
-      - slack/notify:
+      - circleci-slack-orb/notify:
           template: basic_fail_1
           mentions: "@orbs"
           event: always
-      - slack/notify:
+      - circleci-slack-orb/notify:
           template: basic_success_1
           event: always
-      - slack/notify:
+      - circleci-slack-orb/notify:
           template: success_tagged_deploy_1
           event: always
-      - slack/notify:
+      - circleci-slack-orb/notify:
           template: basic_on_hold_1
           event: always
-      - slack/notify:
+      - circleci-slack-orb/notify:
           event: pass
           custom: >
             {
@@ -127,7 +127,8 @@ workflows:
   integration_test-deploy:
     when: << pipeline.parameters.run-integration-tests >>
     jobs:
-      - integration-test-templates
+      - integration-test-templates:
+          context: SLACK_SECRETS_TEST
       - orb-tools/dev-promote-prod-from-commit-subject:
           orb-name: usertech/circleci-slack-orb
           context: orb-publishing
