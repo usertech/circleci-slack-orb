@@ -18,9 +18,6 @@ executors:
   cimg:
     docker:
       - image: cimg/base:stable
-  mac:
-    macos:
-      xcode: 11.7.0
   alpine:
     # This image contains both CURL and JQ
     docker:
@@ -131,7 +128,7 @@ workflows:
           context: SLACK_SECRETS_TEST
           matrix:
             parameters:
-              runner: [cimg, mac, alpine]
+              runner: [cimg, alpine]
 
   integration-test-templates:
     when: << pipeline.parameters.run-integration-tests >>
