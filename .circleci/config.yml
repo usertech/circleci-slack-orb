@@ -94,7 +94,7 @@ jobs:
             }
 
 workflows:
-  test_pack:
+  test-pack:
     unless: << pipeline.parameters.run-integration-tests >>
     jobs:
       - orb-tools/lint
@@ -124,7 +124,7 @@ workflows:
           requires:
             - orb-tools/publish-dev
 
-  integration_test->deploy:
+  integration_test-deploy:
     when: << pipeline.parameters.run-integration-tests >>
     jobs:
       - integration-test-templates
