@@ -94,7 +94,7 @@ jobs:
             }
 
 workflows:
-  test-pack:
+  test_pack:
     unless: << pipeline.parameters.run-integration-tests >>
     jobs:
       - orb-tools/lint
@@ -124,10 +124,10 @@ workflows:
           requires:
             - orb-tools/publish-dev
 
-  integration-test_deploy:
+  integration_test->deploy:
     when: << pipeline.parameters.run-integration-tests >>
     jobs:
-      - integration-test-template
+      - integration-test-templates
       - orb-tools/dev-promote-prod-from-commit-subject:
           orb-name: usertech/circleci-slack-orb
           context: orb-publishing
@@ -135,7 +135,7 @@ workflows:
           fail-if-semver-not-indicated: true
           publish-version-tag: false
           requires:
-            - integration-test-template
+            - integration-test-templates
           filters:
             branches:
               only:
