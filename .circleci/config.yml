@@ -135,6 +135,7 @@ workflows:
     jobs:
       - integration-test-templates
       - orb-tools/dev-promote-prod-from-commit-subject:
+          context: orb-publishing
           orb-name: usertech/circleci-slack-orb
           add-pr-comment: false
           fail-if-semver-not-indicated: true
