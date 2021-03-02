@@ -68,7 +68,7 @@ workflows:
       - orb-tools/publish-dev:
           orb-name: usertech/circleci-slack-orb
           context: orb-publishing
-          requires: 
+          requires:
             - hold-for-dev-publish
       - orb-tools/trigger-integration-tests-workflow:
           name: trigger-integration-dev
