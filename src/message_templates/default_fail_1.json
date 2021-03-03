@@ -32,7 +32,7 @@
 				},
 				{
 					"type": "mrkdwn",
-					"text": "*Mentions*: $SLACK_PARAM_MENTIONS"
+					"text": "*Mentions*: $CIRCLE_USERNAME"
 				},
 				{
 					"type": "mrkdwn",
