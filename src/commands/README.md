@@ -4,8 +4,6 @@ Easily add and author [Reusable Commands](https://circleci.com/docs/2.0/reusing-
 
 Each _YAML_ file within this directory will be treated as an orb command, with a name which matches its filename.
 
-View the included _[greet.yml](./greet.yml)_ example.
-
 ```yaml
 description: >
   Replace this text with a description for this command.
