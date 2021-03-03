@@ -1,0 +1,60 @@
+{
+	"blocks": [
+		{
+			"type": "header",
+			"text": {
+				"type": "plain_text",
+				"text": "${CIRCLE_PROJECT_REPONAME} - job failed :x:",
+				"emoji": true
+			}
+		},
+		{
+			"type": "divider"
+		},
+		{
+			"type": "section",
+			"fields": [
+				{
+					"type": "mrkdwn",
+					"text": "*Job*: ${CIRCLE_JOB}"
+				},
+				{
+					"type": "mrkdwn",
+					"text": "*Branch*: ${CIRCLE_BRANCH}"
+				},
+				{
+					"type": "mrkdwn",
+					"text": "*Tag*: ${CIRCLE_TAG}"
+				},
+				{
+					"type": "mrkdwn",
+					"text": "*Author*: ${CIRCLE_USERNAME}"
+				},
+				{
+					"type": "mrkdwn",
+					"text": "*When*: $(date +'%m/%d/%Y %T'"
+				},
+				{
+					"type": "mrkdwn",
+					"text": "*Mentions*: ${SLACK_PARAM_MENTIONS}"
+				}
+			]
+		},
+		{
+			"type": "divider"
+		},
+		{
+			"type": "actions",
+			"elements": [
+				{
+					"type": "button",
+					"text": {
+						"type": "plain_text",
+						"text": "View Job"
+					},
+					"value": "${CIRCLE_BUILD_URL}"
+				}
+			]
+		}
+	]
+}
