@@ -4,9 +4,12 @@
 			"type": "header",
 			"text": {
 				"type": "plain_text",
-				"text": "Job Failed. :red_circle:",
+				"text": "$CIRCLE_PROJECT_REPONAME Job Failed. :x:",
 				"emoji": true
 			}
+		},
+		{
+			"type": "divider"
 		},
 		{
 			"type": "section",
@@ -14,23 +17,26 @@
 				{
 					"type": "mrkdwn",
 					"text": "*Job*: ${CIRCLE_JOB}"
-				}
-			]
-		},
-		{
-			"type": "section",
-			"fields": [
-				{
-					"type": "mrkdwn",
-					"text": "*Project*:\\n$CIRCLE_PROJECT_REPONAME"
 				},
 				{
 					"type": "mrkdwn",
-					"text": "*Branch*:\\n$CIRCLE_BRANCH"
+					"text": "*Branch*: $CIRCLE_BRANCH"
 				},
 				{
 					"type": "mrkdwn",
-					"text": "*Author*:\\n$CIRCLE_USERNAME"
+					"text": "*Tag*: $CIRCLE_TAG"
+				},
+				{
+					"type": "mrkdwn",
+					"text": "*Author*: $CIRCLE_USERNAME"
+				},
+				{
+					"type": "mrkdwn",
+					"text": "*Mentions*: $SLACK_PARAM_MENTIONS"
+				},
+				{
+					"type": "mrkdwn",
+					"text": "*When*: $(date +'%m/%d/%Y %T')"
 				}
 			],
 			"accessory": {
@@ -40,13 +46,7 @@
 			}
 		},
 		{
-			"type": "section",
-			"fields": [
-				{
-					"type": "mrkdwn",
-					"text": "*Mentions*:\\n$SLACK_PARAM_MENTIONS"
-				}
-			]
+			"type": "divider"
 		},
 		{
 			"type": "actions",
