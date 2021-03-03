@@ -84,7 +84,7 @@ steps:
         SLACK_PARAM_TAGPATTERN: "<<parameters.tag_pattern>>"
         SLACK_PARAM_CHANNEL: "<<parameters.channel>>"
         SLACK_PARAM_IGNORE_ERRORS: "<<parameters.ignore_errors>>"
-        default_fail_1: "<<include(message_templates/deafult_fail_1.json)>>"
+        default_fail_1: "<<include(message_templates/default_fail_1.json)>>"
         basic_on_hold_1: "<<include(message_templates/basic_on_hold_1.json)>>"
         default_pass_1: "<<include(message_templates/default_pass_1.json)>>"
       command: <<include(scripts/notify.sh)>>
