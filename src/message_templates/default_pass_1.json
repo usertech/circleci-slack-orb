@@ -49,21 +49,17 @@
 			"type": "divider"
 		},
 		{
-			"type": "section",
-			"text": {
-				"type": "mrkdwn",
-				"text": "To view the job click on the button"
-			},
-			"accessory": {
-				"type": "button",
-				"text": {
-					"type": "plain_text",
-					"text": "View Job",
-					"emoji": true
-				},
-				"value": "click_me_123",
-				"action_id": "${CIRCLE_BUILD_URL}"
-			}
+			"type": "actions",
+			"elements": [
+				{
+					"type": "button",
+					"text": {
+						"type": "plain_text",
+						"text": "View Job"
+					},
+					"value": "${CIRCLE_BUILD_URL}"
+				}
+			]
 		}
 	]
 }
