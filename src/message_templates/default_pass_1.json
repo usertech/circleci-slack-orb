@@ -4,9 +4,12 @@
 			"type": "header",
 			"text": {
 				"type": "plain_text",
-				"text": "Job Succeeded. :white_check_mark:",
+				"text": "$CIRCLE_PROJECT_REPONAME Job Succeeded. :green_heart:",
 				"emoji": true
 			}
+		},
+		{
+			"type": "divider"
 		},
 		{
 			"type": "section",
@@ -14,27 +17,26 @@
 				{
 					"type": "mrkdwn",
 					"text": "*Job*: ${CIRCLE_JOB}"
-				}
-			]
-		},
-		{
-			"type": "section",
-			"fields": [
-				{
-					"type": "mrkdwn",
-					"text": "*Project*:\\n$CIRCLE_PROJECT_REPONAME"
 				},
 				{
 					"type": "mrkdwn",
-					"text": "*Branch*:\\n$CIRCLE_BRANCH"
-                },
-                {
-					"type": "mrkdwn",
-					"text": "*Commit*:\\n$CIRCLE_SHA1"
+					"text": "*Branch*: $CIRCLE_BRANCH"
 				},
 				{
 					"type": "mrkdwn",
-					"text": "*Author*:\\n$CIRCLE_USERNAME"
+					"text": "*Tag*: $CIRCLE_TAG"
+				},
+				{
+					"type": "mrkdwn",
+					"text": "*Author*: $CIRCLE_USERNAME"
+				},
+				{
+					"type": "mrkdwn",
+					"text": "*Mentions*: $SLACK_PARAM_MENTIONS"
+				},
+				{
+					"type": "mrkdwn",
+					"text": "*When*: $(date +'%m/%d/%Y %T')"
 				}
 			],
 			"accessory": {
@@ -44,17 +46,24 @@
 			}
 		},
 		{
-			"type": "actions",
-			"elements": [
-				{
-					"type": "button",
-					"text": {
-						"type": "plain_text",
-						"text": "View Job"
-					},
-					"url": "${CIRCLE_BUILD_URL}"
-				}
-			]
+			"type": "divider"
+		},
+		{
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": "To view the job click on the button"
+			},
+			"accessory": {
+				"type": "button",
+				"text": {
+					"type": "plain_text",
+					"text": "View Job",
+					"emoji": true
+				},
+				"value": "click_me_123",
+				"action_id": "${CIRCLE_BUILD_URL}"
+			}
 		}
 	]
 }
