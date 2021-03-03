@@ -69,7 +69,7 @@ A starter template for orb projects. Build, test, and publish orbs automatically
 Additional READMEs are available in each directory.
 
 ## Resources
-[CircleCI Slack Orb](https://circleci.com/developer/orbs/orb/circleci/slack) - The official orb which was used as base.
+[CircleCI Slack Orb](https://circleci.com/developer/orbs/orb/circleci/slack) - The official orb which was used as source.
 [CircleCI Orb Registry Page](https://circleci.com/orbs/registry/orb/usertech/circleci-slack-orb) - The official registry page of this orb for all versions, executors, commands, and jobs described.
 [CircleCI Orb Docs](https://circleci.com/docs/2.0/orb-intro/#section=configuration) - Docs for using and creating CircleCI Orbs.
 
