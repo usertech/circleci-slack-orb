@@ -68,7 +68,7 @@ jobs:
           event: always
 
       - slack/notify:
-          template: basic_on_hold_1
+          template: default_on_hold_1
           event: always
 
       - slack/notify:
