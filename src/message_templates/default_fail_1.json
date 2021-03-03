@@ -4,7 +4,7 @@
 			"type": "header",
 			"text": {
 				"type": "plain_text",
-				"text": "$CIRCLE_PROJECT_REPONAME Job Failed. :x:",
+				"text": "$CIRCLE_PROJECT_REPONAME Job Failed :x:",
 				"emoji": true
 			}
 		},
