@@ -18,9 +18,9 @@ The Slack Orb comes with a number of included templates to get your started with
 
 | Template Preview  | Template  | Description |
 | ------------- | ------------- | ------------- |
-| ![default_pass_1](./.github/img/default_pass_1.png)  | default_pass_1   | Should be used with the "pass" event. |
-| ![default_fail_1](./.github/img/default_fail_1.png)  | default_fail_1   | Should be used with the "fail" event. |
-| ![default_on_hold_1](./.github/img/default_on_hold_1.png)  | default_on_hold_1   | To be used in the on-hold job. _see orb [usage examples](https://circleci.com/developer/orbs/orb/usertech/circleci-slack-orb#usage-example)_  |
+| ![default_pass_1](./.github/images/default_pass_1.png)  | default_pass_1   | Should be used with the "pass" event. |
+| ![default_fail_1](./.github/images/default_fail_1.png)  | default_fail_1   | Should be used with the "fail" event. |
+| ![default_on_hold_1](./.github/images/default_on_hold_1.png)  | default_on_hold_1   | To be used in the on-hold job. _see orb [usage examples](https://circleci.com/developer/orbs/orb/usertech/circleci-slack-orb#usage-example)_  |
 
 
 ## Custom Message Template
