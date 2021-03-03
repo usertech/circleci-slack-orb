@@ -59,7 +59,7 @@ jobs:
             grep "pass" /tmp/SLACK_JOB_STATUS
 
       - slack/notify:
-          template: default_fail_1
+          template: deafult_fail_1
           mentions: "@orbs"
           event: always
 
