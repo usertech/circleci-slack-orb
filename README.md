@@ -10,7 +10,7 @@ In order to use the Slack Orb on CircleCI you will need to create a Slack App an
 
 ### Use In Config
 
-For full usage guidelines, see the [Orb Registry listing](http://circleci.com/orbs/registry/orb/circleci/slack).
+For full usage guidelines, see the [Orb Registry listing](https://circleci.com/developer/orbs/orb/usertech/circleci-slack-orb).
 
 ## Templates
 
