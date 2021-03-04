@@ -79,4 +79,3 @@ steps:
         default_on_hold_1: "<<include(message_templates/default_on_hold_1.json)>>"
         default_pass_1: "<<include(message_templates/default_pass_1.json)>>"
       command: <<include(scripts/notify.sh)>>
-
