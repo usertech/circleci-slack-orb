@@ -37,13 +37,13 @@ parameters:
     type: string
     default: ".+"
 
-  mentions:
-    description: |
-      Exports to the "$SLACK_PARAM_MENTIONS" environment variable for use in templates.
-      Mention users via the @ symbol: "@USER"
-      If the username contains a space, the Slack ID must be used with angled brackets: "<@U8XXXXXXX>"
-    type: string
-    default: ""
+    #  mentions:
+    #    description: |
+    #      Exports to the "$SLACK_PARAM_MENTIONS" environment variable for use in templates.
+    #      Mention users via the @ symbol: "@USER"
+    #      If the username contains a space, the Slack ID must be used with angled brackets: "<@U8XXXXXXX>"
+    #    type: string
+    #    default: ""
 
   channel:
     description: |
@@ -79,7 +79,7 @@ steps:
         SLACK_PARAM_EVENT: "<<parameters.event>>"
         SLACK_PARAM_TEMPLATE: "<<parameters.template>>"
         SLACK_PARAM_CUSTOM: "<<parameters.custom>>"
-        SLACK_PARAM_MENTIONS: "<<parameters.mentions>>"
+        #SLACK_PARAM_MENTIONS: "<<parameters.mentions>>"
         SLACK_PARAM_BRANCHPATTERN: "<<parameters.branch_pattern>>"
         SLACK_PARAM_TAGPATTERN: "<<parameters.tag_pattern>>"
         SLACK_PARAM_CHANNEL: "<<parameters.channel>>"
