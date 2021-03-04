@@ -70,21 +70,6 @@ jobs:
           template: default_on_hold_1
           event: always
 
-      - slack/notify:
-          event: pass
-          custom: >
-            {
-              "blocks": [
-                {
-                  "type": "section",
-                  "text": {
-                    "type": "mrkdwn",
-                    "text": "Sample link using environment variable in markdown <${CIRCLE_BUILD_URL}|LINK >"
-                  }
-                }
-              ]
-            }
-
 workflows:
   test-pack:
     unless: << pipeline.parameters.run-integration-tests >>
