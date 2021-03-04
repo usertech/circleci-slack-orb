@@ -9,16 +9,8 @@ parameters:
     type: string
     default: ".+"
 
-    #  mentions:
-    #    description: |
-    #      Exports to the "$SLACK_PARAM_MENTIONS" environment variable for use in templates.
-    #      Mention users via the @ symbol: "@USER"
-    #      If the username contains a space, the Slack ID must be used with angled brackets: "<@U8XXXXXXX>"
-    #    type: string
-    #    default: ""
-
   template:
-    description: '(optional) By default this job will send the standard "basic_on_hold_1" template. In order to use a custom template you must also set this value to an empty string.'
+    description: '(optional) By default this job will send the standard "default_on_hold_1" template. In order to use a custom template you must also set this value to an empty string.'
     type: string
     default: "default_on_hold_1"
 
@@ -49,5 +41,4 @@ steps:
       template: <<parameters.template>>
       branch_pattern: <<parameters.branch_pattern>>
       custom: <<parameters.custom>>
-      #mentions: <<parameters.mentions>>
       channel: <<parameters.channel>>
