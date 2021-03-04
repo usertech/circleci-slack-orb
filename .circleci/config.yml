@@ -60,7 +60,6 @@ jobs:
 
       - slack/notify:
           template: deafult_fail_1
-          mentions: "@orbs"
           event: always
 
       - slack/notify:
