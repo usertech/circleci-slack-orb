@@ -12,7 +12,9 @@ usage:
       steps:
         - run: some build command
         - slack/notify:
-            branch_pattern: main # A comma separated list of regex matchable branch names. Notifications will only be sent if sent from a job from these branches. By default ".+" will be used to match all branches.
+            # A comma separated list of regex matchable branch names. Notifications will only be sent if 
+            # sent from a job from these branches. By default ".+" will be used to match all branches.
+            branch_pattern: main 
             event: fail
             template: default_fail_1
         - slack/notify:
