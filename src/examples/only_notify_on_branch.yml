@@ -5,7 +5,7 @@ description: >
 usage:
   version: 2.1
   orbs:
-    slack: usertech/circleci-slack-orb@4.0.0
+    slack: usertech/circleci-slack-orb@5.1.0
   jobs:
     build:
       machine: true
@@ -21,7 +21,6 @@ usage:
             branch_pattern: production # A second alert to ping certain folks to failures on this branch.
             event: fail
             template: default_fail_1
-            mentions: "<@U8XXXXXXX>, @UserName"
   workflows:
     deploy_and_notify:
       jobs:

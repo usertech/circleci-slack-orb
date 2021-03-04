@@ -5,7 +5,7 @@ description: |
 usage:
   version: 2.1
   orbs:
-    slack: usertech/circleci-slack-orb@4.0.0
+    slack: usertech/circleci-slack-orb@5.1.0
   jobs:
     # This "test" job will run on every commit (as per our workflow)
     # We are ok with no notifications sent for this job.
@@ -21,11 +21,10 @@ usage:
         - image: cimg/base:stable
       steps:
         - run: echo "deploy my app"
-        # In the event the deployment has failed, alert the engineering team
+        # In the event the deployment has failed, send a notification with default_fail_1 template
         - slack/notify:
             event: fail
             template: default_fail_1
-            mentions: "@EngineeringTeam"
         # When there is a successful deployment, send a notification with a different template.
         - slack/notify:
             event: pass
